@@ -61,6 +61,7 @@ export default function Product() {
               <div className={styles.pickerContainer}>
                 {COLORS.map((color) => (
                   <ColorPicker
+                    key={color.hue}
                     name="color"
                     id={color.hue}
                     tooltip={color.tooltip}

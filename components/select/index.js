@@ -5,7 +5,9 @@ export default function Select({ options = [], id, name }) {
     <select className={styles.select} id={id} name={name}>
       <option value="">Choisir une option</option>
       {options.map((option) => (
-        <option value={option}>{option}</option>
+        <option key={option} value={option}>
+          {option}
+        </option>
       ))}
     </select>
   );
