@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
-import utilStyles from "../styles/utils.module.css";
+import utilStyles from "../styles/utils.module.scss";
 import Link from "next/link";
 import Date from "../components/date";
 import { getSortedPostsData } from "../lib/posts";
@@ -42,6 +42,9 @@ export default function Home({ allPostsData }) {
             </li>
           ))}
         </ul>
+        <Link href={`/products/product`}>
+          <a>Product</a>
+        </Link>
       </section>
     </Layout>
   );

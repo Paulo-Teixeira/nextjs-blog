@@ -1,0 +1,37 @@
+.button {
+  $size: 38px;
+  background: transparent;
+  background-color: lightgray;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 700;
+  height: $size;
+  margin: 0;
+  outline: 0;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  --webkit-appearance: none;
+  --moz-appearance: none;
+  width: $size;
+
+  &:hover,
+  &:focus {
+    background-color: darken(lightgray, 10);
+  }
+
+  &:active {
+    background-color: darken(lightgray, 20);
+  }
+}
+
+.input {
+  background-color: lightgray;
+  border: 0;
+  border-radius: 2px;
+  margin: 0 2px;
+  padding: 10px;
+  text-align: center;
+  width: 60px;
+}

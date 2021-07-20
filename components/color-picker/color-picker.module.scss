@@ -1,0 +1,49 @@
+$size: 40px;
+
+.container {
+  flex: 0 0 $size;
+  height: $size;
+  margin-right: 20px;
+  position: relative;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.radio {
+  opacity: 0;
+
+  & + .label {
+    cursor: pointer;
+  }
+
+  & + .label::before {
+    position: absolute;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+  }
+
+  & + .label::before {
+    border-radius: 50%;
+    content: "";
+    display: inline-block;
+    height: $size;
+    left: 0;
+    width: $size;
+  }
+
+  &.crimson + .label::before {
+    background-color: crimson;
+  }
+  &.coral + .label::before {
+    background-color: coral;
+  }
+  &.darkcyan + .label::before {
+    background-color: darkcyan;
+  }
+
+  &:checked + .label::before {
+    border: 3px solid #005cc8;
+  }
+}

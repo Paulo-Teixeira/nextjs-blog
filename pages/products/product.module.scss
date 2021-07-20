@@ -1,0 +1,33 @@
+.product {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.carousel {
+  background-color: gold;
+  flex: 0 0 50%;
+}
+
+.productConfiguration {
+  flex: 0 0 50%;
+  padding: 20px;
+}
+
+.productDetails {
+  background-color: tomato;
+  flex: 0 0 50%;
+}
+
+.formField {
+  position: relative;
+
+  &:not(&:last-child) {
+    margin-bottom: 25px;
+  }
+}
+
+.pickerContainer {
+  display: flex;
+  justify-content: flex-Start;
+  width: 60%;
+}

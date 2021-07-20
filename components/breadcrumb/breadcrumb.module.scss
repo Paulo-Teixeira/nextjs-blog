@@ -1,0 +1,16 @@
+.link {
+  &:not(&:last-child) {
+    margin-right: 10px;
+    &::after {
+      content: ">";
+      padding-left: 4px;
+    }
+  }
+
+  &:first-child {
+    &::before {
+      content: "☖";
+      padding-right: 4px;
+    }
+  }
+}

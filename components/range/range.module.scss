@@ -1,0 +1,19 @@
+.range {
+  width: 60%;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.value {
+  background-color: lightgrey;
+  border-radius: 2px;
+  font: {
+    size: 14px;
+    weight: 700;
+  }
+  padding: 6px 12px;
+}
