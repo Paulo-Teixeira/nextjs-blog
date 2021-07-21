@@ -3,7 +3,11 @@ import { useState } from "react";
 
 export default function Quantity({ id, name, value = 0 }) {
   const [quantity, setQuantity] = useState(value);
-  const onRemoveHandler = () => setQuantity(quantity - 1);
+  const onRemoveHandler = () => {
+    if (quantity === 0) return;
+    setQuantity(quantity - 1);
+  };
+
   const onAddHandler = () => setQuantity(quantity + 1);
   const onChangeHandler = (e) => {
     const regex = "^[0-9]*$";
