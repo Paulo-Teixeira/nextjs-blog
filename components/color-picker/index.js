@@ -9,9 +9,8 @@ export default function ColorPicker({ id, name, value, tooltip }) {
         id={id}
         name={name}
         value={value}
-        title={tooltip}
       />
-      <label className={styles.label} htmlFor={id} />
+      <label className={styles.label} htmlFor={id} title={tooltip} />
     </div>
   );
 }

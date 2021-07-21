@@ -18,6 +18,10 @@
   flex: 0 0 50%;
 }
 
+.form {
+  width: 60%;
+}
+
 .formField {
   position: relative;
 
@@ -29,5 +33,4 @@
 .pickerContainer {
   display: flex;
   justify-content: flex-Start;
-  width: 60%;
 }

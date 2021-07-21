@@ -43,13 +43,13 @@ export default function Product() {
             tortor nec lacus efficitur sagittis."
             />
           </article>
-          <form>
+          <form className={styles.form}>
             <div className={styles.formField}>
               <Label id="sel" label="Options" />
               <Select
                 id="sel"
                 name="sel"
-                options={["option 1", "option 2", "option 3", "option 4"]}
+                options={["Option 1", "Option 2", "Option 3", "Option 4"]}
               />
             </div>
             <div className={styles.formField}>
