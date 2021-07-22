@@ -1,20 +1,25 @@
 .product {
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 1fr;
+  column-gap: 40px;
+  row-gap: 40px;
 }
 
 .carousel {
-  background-color: gold;
-  flex: 0 0 50%;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 
 .productConfiguration {
-  flex: 0 0 50%;
-  padding: 20px;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
 
 .productDetails {
-  flex: 0 0 50%;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 .form {

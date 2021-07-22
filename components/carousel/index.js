@@ -1,21 +1,21 @@
 import { useEffect, useState, useCallback } from "react";
 import { useEmblaCarousel } from "embla-carousel/react";
-import { Thumb } from "./emblaCarouselThumb";
-import { mediaByIndex } from "../../lib/mediaGenerator";
+import { Thumbs } from "./emblaCarouselThumbs";
 import Image from "next/image";
-import styles from "./emblaCarousel.module.scss";
 
 const MEDIAS = [
-  "/../public/images/media-1.webp",
-  "/../public/images/media-2.webp",
-  "/../public/images/media-3.webp",
-  "/../public/images/media-4.webp",
-  "/../public/images/media-5.webp",
+  "/images/media-1.webp",
+  "/images/media-2.webp",
+  "/images/media-3.webp",
+  "/images/media-4.webp",
+  "/images/media-5.webp",
+  "/images/media-6.webp",
 ];
 
-export const EmblaCarousel = ({ slides }) => {
+export default function EmblaCarouse() {
+  const [emblaRef, embla] = useEmblaCarousel({ skipSnaps: false });
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [mainViewportRef, embla] = useEmblaCarousel({ skipSnaps: false });
+  const [scrollSnaps, setScrollSnaps] = useState([]);
   const [thumbViewportRef, emblaThumbs] = useEmblaCarousel({
     containScroll: "keepSnaps",
     selectedClass: "",
@@ -40,19 +40,19 @@ export const EmblaCarousel = ({ slides }) => {
     if (!embla) return;
     onSelect();
     embla.on("select", onSelect);
-  }, [embla, onSelect]);
+  }, [embla, setScrollSnaps, onSelect]);
 
   return (
     <>
-      <div className={styles.embla}>
-        <div className={styles.embla__viewport} ref={mainViewportRef}>
-          <div className={styles.embla__container}>
-            {slides.map((index) => (
-              <div className={styles.embla__slide} key={index}>
-                <div className={styles.embla__slide__inner}>
+      <div className="embla">
+        <div className="embla__viewport embla__viewport--main" ref={emblaRef}>
+          <div className="embla__container">
+            {MEDIAS.map((media) => (
+              <div className="embla__slide" key={media}>
+                <div className="embla__slide__inner">
                   <Image
-                    className={styles.embla__slide__img}
-                    src={MEDIAS[index]}
+                    className="embla__slide__img"
+                    src={media}
                     alt="A cool cat."
                     layout="fill"
                   />
@@ -66,12 +66,12 @@ export const EmblaCarousel = ({ slides }) => {
       <div className="embla embla--thumb">
         <div className="embla__viewport" ref={thumbViewportRef}>
           <div className="embla__container embla__container--thumb">
-            {slides.map((index) => (
-              <Thumb
+            {MEDIAS.map((media, index) => (
+              <Thumbs
                 onClick={() => onThumbClick(index)}
                 selected={index === selectedIndex}
-                imgSrc={MEDIAS[index]}
-                key={index}
+                imgSrc={media}
+                key={media}
               />
             ))}
           </div>
@@ -79,4 +79,4 @@ export const EmblaCarousel = ({ slides }) => {
       </div>
     </>
   );
-};
+}

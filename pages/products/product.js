@@ -12,11 +12,8 @@ import Quantity from "../../components/quantity";
 import Button from "../../components/button";
 import Reassurance from "../../components/reassurance";
 import Tabs from "../../components/tabs";
-import { EmblaCarousel } from "../../components/carousel";
+import EmblaCarousel from "../../components/carousel";
 import styles from "./product.module.scss";
-
-const SLIDE_COUNT = 5;
-const slides = Array.from(Array(SLIDE_COUNT).keys());
 
 const SPECS = [
   {
@@ -62,7 +59,9 @@ export default function Product() {
       </Head>
       <Breadcrumb />
       <div className={styles.product}>
-        <div className={styles.carousel}>Carousel</div>
+        <div className={styles.carousel}>
+          <EmblaCarousel />
+        </div>
         <div className={styles.productConfiguration}>
           <article>
             <Title marque="Marque" modele="Modèle" reference="Référence" />
